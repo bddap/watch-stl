@@ -1,0 +1,36 @@
+{
+  "name": "watch-stl",
+  "version": "0.0.0",
+  "description": "Display changes to a 3d model in real time.",
+  "main": "index.js",
+  "dependencies": {
+    "nw": "^0.17.6-sdk",
+    "stl": "^1.1.1",
+    "three": "^0.81.2",
+    "three-default": "0.0.1"
+  },
+  "bin": {
+    "watch-stl": "index.js"
+  },
+  "scripts": {
+    "test": "node index.js test/castle.stl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bddap/watch-stl.git"
+  },
+  "keywords": [
+    "jscad",
+    "stl",
+    "parametric",
+    "cad",
+    "veiwer",
+    "naitive"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bddap/watch-stl/issues"
+  },
+  "homepage": "https://github.com/bddap/watch-stl#readme"
+}
