@@ -1,7 +1,3 @@
-// function log(a) {
-//   process.stdout.write(a + '\n')
-// }
-
 const {three, addTestCube, camera, scene, fitToParent, renderForever, renderOnce, renderer}
   = require('three-default')({parent:document.body})
 const fs = require('fs')
@@ -30,6 +26,14 @@ function load(){
     mesh = new three.Mesh( geometry, new three.MeshLambertMaterial( { color: 0xffffff } ) )
 
     scene.add(mesh)
+
+    // center and scale to fit screen
+    geometry.computeBoundingSphere()
+    const bs = geometry.boundingSphere
+    const scale = 1 / bs.radius // if zero radius, nothing to render
+    geometry.scale(scale, scale, scale)
+    const {x,y,z} = bs.center
+    geometry.translate(-x, -y, -z)
   })
 }
 
@@ -43,7 +47,7 @@ function updateForever(t) {
   renderOnce()
 }
 updateForever()
-camera.position.z = 200
+camera.position.z = 4
 scene.rotation.x = 1
 
 scene.add(new three.AmbientLight(0x555555, 0.5));
