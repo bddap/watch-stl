@@ -58,7 +58,4 @@ scene.add( dlight );
 load()
 fs.watch(nw.App.argv[0], load)
 
-// TODO: load color from binary stl if possible
-// TODO: move camera to fit bounding box (THREE has a bounding box function)
-// TODO: center target by checking bounding box
 // TODO: veiwer controls (https://github.com/Jam3/three-orbit-viewer may be useful)
